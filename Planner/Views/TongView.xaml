@@ -3,9 +3,61 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ext="clr-namespace:Planner.Extensions"
              mc:Ignorable="d"
+             FontFamily="Microsoft YaHei UI"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock Text="TongView" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Style="{StaticResource TongConditionOption}" Grid.Row="0">
+                        <Label Style="{StaticResource TongConditionLabel}" Content="{x:Static ext:Texts.EconomicPrecision}"></Label>
+                        <ComboBox x:Name="EcoComboBox" Grid.Row="1" ItemsSource="{Binding EcoItems}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Style="{StaticResource TongConditionTextBox}" Text="{Binding Option}" />
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Column="1"></Grid>
+            </Grid>
+        </Grid>
+
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock
+                Style="{StaticResource TongTaskHeader}"
+                Text="{x:Static ext:Texts.TongPossiblePlan}" Grid.Row="0" />
+            <ScrollViewer Grid.Row="1">
+
+            </ScrollViewer>
+        </Grid>
+
     </Grid>
 </UserControl>

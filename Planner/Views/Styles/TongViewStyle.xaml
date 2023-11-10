@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="TongTaskHeader" TargetType="TextBlock" BasedOn="{StaticResource BaseText}">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="Background" Value="LightGray"></Setter>
+    </Style>
+
+    <Style x:Key="TongConditionOption" TargetType="StackPanel">
+        <Setter Property="Orientation" Value="Horizontal"></Setter>
+        <Setter Property="Margin" Value="10"></Setter>
+    </Style>
+    <Style x:Key="TongConditionLabel" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+    </Style>
+
+    <Style x:Key="TongConditionTextBox" TargetType="TextBlock" BasedOn="{StaticResource BaseText}">
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="Padding" Value="2"></Setter>
+    </Style>
+
+</ResourceDictionary>

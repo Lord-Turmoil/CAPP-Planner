@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Planner.Extensions;
 
-namespace Planner.Extensions
+static class PrismManager
 {
-    internal class PrismManager
-    {
-        public const string MainViewRegionName = "MainViewRegion";
-    }
+    public const string MainViewRegionName = "MainViewRegion";
 }

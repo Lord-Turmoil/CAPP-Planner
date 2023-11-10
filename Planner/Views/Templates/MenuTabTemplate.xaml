@@ -2,16 +2,12 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <DataTemplate x:Key="MenuTabHeaderTemplate">
         <Label 
-            FontFamily="Microsoft YaHei UI"
-            FontSize="18"
+            Style="{StaticResource MenuTabTitle}"
             Content="{Binding Title}" />
     </DataTemplate>
     <DataTemplate x:Key="MenuTabContentTemplate">
         <TextBlock 
-            FontFamily="Microsoft YaHei UI"
-            Padding="5"
-            TextAlignment="Right"
-            FontSize="18"
+            Style="{StaticResource MenuTabDescription}"
             Text="{Binding Description}" />
     </DataTemplate>
 </ResourceDictionary>

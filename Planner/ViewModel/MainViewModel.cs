@@ -23,8 +23,6 @@ internal class MainViewModel : BindableBase
         CreateMenuTabs();
 
         NavigateCommand = new DelegateCommand<MenuTab>(Navigate);
-
-        NavigateCommand.Execute(MenuTabs[0]);
     }
 
     public DelegateCommand<MenuTab> NavigateCommand { get; private set; }
