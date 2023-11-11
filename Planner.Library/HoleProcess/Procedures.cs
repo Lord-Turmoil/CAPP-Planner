@@ -1,19 +1,10 @@
 ﻿using System.Collections.Generic;
+
 namespace Planner.Library.HoleProcess;
 
 static class Procedures
 {
-    public static List<string> GetProcedure(int id)
-    {
-        if (_procedures.ContainsKey(id))
-        {
-            return _procedures[id];
-        }
-
-        return new List<string>();
-    }
-
-    private static Dictionary<int, List<string>> _procedures = new()
+    private static readonly Dictionary<int, List<string>> _procedures = new()
     {
         { 1, new List<string> { "钻" } },
         { 2, new List<string> { "钻", "铰" } },
@@ -33,4 +24,14 @@ static class Procedures
         { 16, new List<string> { "钻", "（扩）", "粗铰", "精铰", "珩磨" } },
         { 17, new List<string> { "钻", "（扩）", "拉", "珩磨" } }
     };
+
+    public static List<string> GetProcedure(int id)
+    {
+        if (_procedures.ContainsKey(id))
+        {
+            return _procedures[id];
+        }
+
+        return new List<string>();
+    }
 }

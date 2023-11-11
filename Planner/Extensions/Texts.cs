@@ -19,5 +19,5 @@ static class Texts
     public const string CastHole = "铸出孔";
     public const string ForgedHole = "锻出孔";
 
-    public const string BulkProduction = "批量生产";
+    public const string BulkProduction = "是否批量生产";
 }

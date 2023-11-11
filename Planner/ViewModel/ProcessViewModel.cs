@@ -2,6 +2,6 @@
 
 namespace Planner.ViewModel;
 
-internal class ProcessViewModel : BindableBase
+class ProcessViewModel : BindableBase
 {
 }

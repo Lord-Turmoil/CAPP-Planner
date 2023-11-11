@@ -7,7 +7,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Views/Styles/BaseStyle.xaml" />
                 <ResourceDictionary Source="Views/Styles/MenuTabStyle.xaml" />
-                <ResourceDictionary Source="Views/Styles/TongViewStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Views/Styles/TongViewStyle.xaml" />
                 <ResourceDictionary Source="Views/Templates/MenuTabTemplate.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

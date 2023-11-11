@@ -9,15 +9,15 @@
         mc:Ignorable="d"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="Planner" Height="720" Width="960">
-    <Grid >
+    <Grid>
         <i:Interaction.Triggers>
             <i:EventTrigger EventName="Loaded">
                 <i:InvokeCommandAction Command="{Binding LoadedCommand}" />
             </i:EventTrigger>
         </i:Interaction.Triggers>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <TabControl x:Name="MenuTab"
                     ItemsSource="{Binding MenuTabs}"
@@ -25,10 +25,11 @@
                     ContentTemplate="{StaticResource MenuTabContentTemplate}">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectionChanged">
-                    <i:InvokeCommandAction Command="{Binding NavigateCommand}" CommandParameter="{Binding ElementName=MenuTab, Path=SelectedItem}" />
+                    <i:InvokeCommandAction Command="{Binding NavigateCommand}"
+                                           CommandParameter="{Binding ElementName=MenuTab, Path=SelectedItem}" />
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </TabControl>
-        <ContentControl Grid.Row="1" prism:RegionManager.RegionName="{x:Static ext:PrismManager.MainViewRegionName}"></ContentControl>
+        <ContentControl Grid.Row="1" prism:RegionManager.RegionName="{x:Static ext:PrismManager.MainViewRegionName}" />
     </Grid>
 </Window>

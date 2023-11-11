@@ -2,6 +2,6 @@
 
 namespace Planner.ViewModel;
 
-internal class IndexViewModel : BindableBase
+class IndexViewModel : BindableBase
 {
 }

@@ -1,6 +1,6 @@
 ﻿namespace Planner.Models;
 
-internal class MenuTab
+class MenuTab
 {
     public MenuTab(string title, string nameSpace, string description)
     {

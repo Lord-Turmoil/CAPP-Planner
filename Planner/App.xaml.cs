@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using System.Windows;
+﻿using System.Windows;
 using Planner.ViewModel;
 using Planner.Views;
 using Prism.DryIoc;

@@ -8,7 +8,7 @@ using Prism.Regions;
 
 namespace Planner.ViewModel;
 
-internal class MainViewModel : BindableBase
+class MainViewModel : BindableBase
 {
     private readonly IContainerProvider _containerProvider;
     private readonly IRegionManager _regionManager;
@@ -25,8 +25,8 @@ internal class MainViewModel : BindableBase
         NavigateCommand = new DelegateCommand<MenuTab>(Navigate);
     }
 
-    public DelegateCommand<MenuTab> NavigateCommand { get; private set; }
-    public DelegateCommand LoadedCommand => new DelegateCommand(() => { NavigateCommand.Execute(MenuTabs[0]); });
+    public DelegateCommand<MenuTab> NavigateCommand { get; }
+    public DelegateCommand LoadedCommand => new(() => { NavigateCommand.Execute(MenuTabs[0]); });
 
     public ObservableCollection<MenuTab> MenuTabs {
         set {
@@ -56,9 +56,8 @@ internal class MainViewModel : BindableBase
         if (_regionManager.Regions.ContainsRegionWithName(PrismManager.MainViewRegionName))
         {
             _regionManager.Regions[PrismManager.MainViewRegionName]
-                .RequestNavigate(tab.NameSpace, back => {
-                    _navigationJournal = back.Context.NavigationService.Journal;
-                });
+                .RequestNavigate(tab.NameSpace,
+                    back => { _navigationJournal = back.Context.NavigationService.Journal; });
         }
     }
 }
