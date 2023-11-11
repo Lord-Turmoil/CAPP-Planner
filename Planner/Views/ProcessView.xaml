@@ -18,63 +18,62 @@
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Margin="20,0,20,0">
+            <Grid Grid.Row="0" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0">
-                    <StackPanel Style="{StaticResource TongConditionOption}">
-                        <Label Style="{StaticResource TongConditionLabel}"
+                <Grid Grid.Column="0" Margin="0,0,10,0">
+                    <StackPanel Style="{StaticResource OptionEntry}">
+                        <Label Style="{StaticResource OptionLabel}"
                            Content="{x:Static ext:Texts.EconomicPrecision}" Width="NaN" />
-                        <ComboBox x:Name="EcoComboBox" ItemsSource="{Binding EcoItems}"
-                              SelectedIndex="{Binding SelectedEcoPrecision}" Width="100">
+                        <ComboBox ItemsSource="{Binding EcoItems}" SelectedIndex="{Binding SelectedEcoPrecision}" Width="100">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Style="{StaticResource TongConditionTextBox}" Text="{Binding Option}" />
+                                    <TextBlock Style="{StaticResource OptionText}" Text="{Binding Option}" />
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
                 </Grid>
-                <Grid Grid.Column="1">
-                    <StackPanel Style="{StaticResource TongConditionOption}">
-                        <Label Style="{StaticResource TongConditionLabel}" Content="{x:Static ext:Texts.Material}"
+                <Grid Grid.Column="1" Margin="10,0,10,0">
+                    <StackPanel Style="{StaticResource OptionEntry}">
+                        <Label Style="{StaticResource OptionLabel}" Content="{x:Static ext:Texts.Material}"
                            Width="NaN" />
                         <ComboBox ItemsSource="{Binding MaterialItems}" SelectedIndex="{Binding SelectedMaterial}"
                               Width="200">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Style="{StaticResource TongConditionTextBox}" Text="{Binding Option}" />
+                                    <TextBlock Style="{StaticResource OptionText}" Text="{Binding Option}" />
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
                 </Grid>
-                <Grid Grid.Column="2">
-                    <StackPanel Style="{StaticResource TongConditionOption}">
-                        <Label Style="{StaticResource TongConditionLabel}" Content="{x:Static ext:Texts.Blank}"
+                <Grid Grid.Column="2" Margin="10,0,0,0">
+                    <StackPanel Style="{StaticResource OptionEntry}">
+                        <Label Style="{StaticResource OptionLabel}" Content="{x:Static ext:Texts.Blank}"
                            Width="NaN" />
                         <ComboBox ItemsSource="{Binding BlankTypeItems}" SelectedIndex="{Binding SelectedBlankType}"
                               Width="200">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Style="{StaticResource TongConditionTextBox}" Text="{Binding Option}" />
+                                    <TextBlock Style="{StaticResource OptionText}" Text="{Binding Option}" />
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
                 </Grid>
             </Grid>
-            <Grid Grid.Row="1" Margin="20,0,20,0">
+            <Grid Grid.Row="1" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <StackPanel Style="{StaticResource TongConditionOption}">
-                        <Label Style="{StaticResource TongConditionLabel}"
+                <Grid Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,10,0">
+                    <StackPanel Style="{StaticResource OptionEntry}">
+                        <Label Style="{StaticResource OptionLabel}"
                            Content="{x:Static ext:Texts.SurfaceRoughness}" />
                         <TextBox TextWrapping="Wrap" Width="160" HorizontalContentAlignment="Center"
                              Style="{StaticResource TongNumberInput }"
@@ -85,9 +84,9 @@
                            HorizontalAlignment="Center" Width="40" />
                     </StackPanel>
                 </Grid>
-                <Grid Grid.Column="1">
-                    <StackPanel Style="{StaticResource TongConditionOption}">
-                        <Label Style="{StaticResource TongConditionLabel}" Content="{x:Static ext:Texts.HoleDiameter}" />
+                <Grid Grid.Column="1" Margin="10,0,0,0">
+                    <StackPanel Style="{StaticResource OptionEntry}">
+                        <Label Style="{StaticResource OptionLabel}" Content="{x:Static ext:Texts.HoleDiameter}" />
                         <TextBox TextWrapping="Wrap" Width="160" HorizontalContentAlignment="Center"
                              Style="{StaticResource TongNumberInput }"
                              VerticalContentAlignment="Center"
@@ -98,15 +97,15 @@
                     </StackPanel>
                 </Grid>
             </Grid>
-            <Grid Grid.Row="2" Margin="20,0,20,0" >
+            <Grid Grid.Row="2" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0">
-                    <StackPanel Style="{StaticResource TongConditionOption}">
-                        <Label Style="{StaticResource TongConditionLabel}"
+                <Grid Grid.Column="0" Margin="0,0,10,0">
+                    <StackPanel Style="{StaticResource OptionEntry}">
+                        <Label Style="{StaticResource OptionLabel}"
                            Content="{x:Static ext:Texts.BulkProduction}" />
                         <CheckBox Content=""
                               IsChecked="{Binding BulkProduction}"
@@ -119,9 +118,9 @@
                         </CheckBox>
                     </StackPanel>
                 </Grid>
-                <Grid Grid.Column="1">
-                    <StackPanel Style="{StaticResource TongConditionOption}">
-                        <Label Style="{StaticResource TongConditionLabel}"
+                <Grid Grid.Column="1" Margin="10,0,10,0">
+                    <StackPanel Style="{StaticResource OptionEntry}">
+                        <Label Style="{StaticResource OptionLabel}"
                            Content="{x:Static ext:Texts.HighQualityHole}" Width="NaN" />
                         <CheckBox Content=""
                               IsChecked="{Binding HighQualityHole}"
@@ -134,9 +133,9 @@
                         </CheckBox>
                     </StackPanel>
                 </Grid>
-                <Grid Grid.Column="2">
-                    <StackPanel Style="{StaticResource TongConditionOption}">
-                        <Label Style="{StaticResource TongConditionLabel}"
+                <Grid Grid.Column="2" Margin="10,0,0,0">
+                    <StackPanel Style="{StaticResource OptionEntry}">
+                        <Label Style="{StaticResource OptionLabel}"
                            Content="{x:Static ext:Texts.HighQualityNonFerrousMetal}" Width="NaN" />
                         <CheckBox Content=""
                               IsChecked="{Binding HighQualityNonFerrousMetal}"
@@ -160,7 +159,7 @@
             </Grid.RowDefinitions>
 
             <TextBlock
-            Style="{StaticResource TongTaskHeader}"
+            Style="{StaticResource ResultHeader}"
             Text="{x:Static ext:Texts.TongPossiblePlan}" Grid.Row="0" />
             <ScrollViewer Grid.Row="1" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
                 <ListBox ItemsSource="{Binding ResultItems}"  ItemTemplate="{StaticResource ResultListTemplate}">

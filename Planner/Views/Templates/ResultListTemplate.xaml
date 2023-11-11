@@ -2,8 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <DataTemplate x:Key="ResultListTemplate">
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,2,0,2">
-            <TextBlock Text="{Binding No}" Style="{StaticResource TongResultIndex}" />
-            <TextBlock Text="{Binding Procedure}" Style="{StaticResource TongResultText}" />
+            <TextBlock Text="{Binding No}" Style="{StaticResource ResultIndex}" />
+            <TextBlock Text="{Binding Procedure}" Style="{StaticResource ResultText}" />
         </StackPanel>
     </DataTemplate>
 </ResourceDictionary>
