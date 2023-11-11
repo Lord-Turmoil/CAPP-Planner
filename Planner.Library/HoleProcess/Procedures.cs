@@ -2,7 +2,7 @@
 
 namespace Planner.Library.HoleProcess;
 
-static class Procedures
+public static class Procedures
 {
     private static readonly Dictionary<int, List<string>> _procedures = new()
     {

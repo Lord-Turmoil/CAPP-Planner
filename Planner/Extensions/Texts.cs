@@ -4,6 +4,10 @@ static class Texts
 {
     public const string TongPossiblePlan = "可能的加工方案：";
 
+    public const string NotSelected = "未选择";
+
+    public const string NoResult = "没有可选方案";
+
     // Choices
     public const string EconomicPrecision = "经济精度";
     public const string SurfaceRoughness = "表面粗糙度";
@@ -20,4 +24,6 @@ static class Texts
     public const string ForgedHole = "锻出孔";
 
     public const string BulkProduction = "是否批量生产";
+    public const string HighQualityHole = "是否具有精度要求很高的孔";
+    public const string HighQualityNonFerrousMetal = "是否是要求较高的有色金属";
 }

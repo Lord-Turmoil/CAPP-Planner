@@ -1,13 +1,13 @@
 ﻿namespace Planner.Models;
 
-class BlankTypeItem
+class OptionItem
 {
-    public BlankTypeItem(int kind, string option)
+    public OptionItem(int kind, string option)
     {
         Kind = kind;
         Option = option;
     }
 
-    public string Option { get; private set; }
     public int Kind { get; private set; }
+    public string Option { get; private set; }
 }

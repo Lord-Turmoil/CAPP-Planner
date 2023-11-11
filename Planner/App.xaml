@@ -9,6 +9,7 @@
                 <ResourceDictionary Source="Views/Styles/MenuTabStyle.xaml" />
                 <ResourceDictionary Source="Views/Styles/TongViewStyle.xaml" />
                 <ResourceDictionary Source="Views/Templates/MenuTabTemplate.xaml" />
+                <ResourceDictionary Source="Views/Templates/ResultListTemplate.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

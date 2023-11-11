@@ -20,6 +20,7 @@ class MainViewModel : BindableBase
         _containerProvider = containerProvider;
         _regionManager = regionManager;
 
+        MenuTabs = new ObservableCollection<MenuTab>();
         CreateMenuTabs();
 
         NavigateCommand = new DelegateCommand<MenuTab>(Navigate);
@@ -38,12 +39,9 @@ class MainViewModel : BindableBase
 
     private void CreateMenuTabs()
     {
-        MenuTabs = new ObservableCollection<MenuTab>
-        {
-            new("主页", "IndexView", "21371300 柳政尧《计算机辅助设计与制造》第 3 次作业"),
-            new("孔加工方法链选择", "ProcessView", "孔加工方法链选择"),
-            new("装夹方案选择决策", "TongView", "装夹方案选择决策")
-        };
+        MenuTabs.Add(new MenuTab("主页", "IndexView", "21371300 柳政尧《计算机辅助设计与制造》第 3 次作业"));
+        MenuTabs.Add(new MenuTab("孔加工方法链选择", "ProcessView", "孔加工方法链选择"));
+        MenuTabs.Add(new MenuTab("装夹方案选择决策", "TongView", "装夹方案选择决策"));
     }
 
     private void Navigate(MenuTab tab)

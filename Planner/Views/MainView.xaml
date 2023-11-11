@@ -8,7 +8,8 @@
         xmlns:ext="clr-namespace:Planner.Extensions"
         mc:Ignorable="d"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="Planner" Height="720" Width="960">
+        Title="Planner" Height="640" Width="960"
+        MinWidth="960" MinHeight="480">
     <Grid>
         <i:Interaction.Triggers>
             <i:EventTrigger EventName="Loaded">
