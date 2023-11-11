@@ -16,7 +16,7 @@ class ProcessViewModel : BindableBase
     private ObservableCollection<OptionItem> _ecoItems;
     private ObservableCollection<OptionItem> _materialItems;
 
-    private readonly HoleProcessSelector _holeProcessSelector = new();
+    private readonly HolePlanner _holePlanner = new();
 
     private string _surfaceRoughnessText = "0.0";
     private string _holeDiameterText = "0.0";
@@ -63,29 +63,29 @@ class ProcessViewModel : BindableBase
 
     public int SelectedEcoPrecision {
         set {
-            _holeProcessSelector.SelectedEcoPrecision = value;
+            _holePlanner.SelectedEcoPrecision = value;
             RaisePropertyChanged();
             UpdateResult();
         }
-        get => _holeProcessSelector.SelectedEcoPrecision;
+        get => _holePlanner.SelectedEcoPrecision;
     }
 
     public int SelectedMaterial {
         set {
-            _holeProcessSelector.SelectedMaterial = value;
+            _holePlanner.SelectedMaterial = value;
             RaisePropertyChanged();
             UpdateResult();
         }
-        get => _holeProcessSelector.SelectedMaterial;
+        get => _holePlanner.SelectedMaterial;
     }
 
     public int SelectedBlankType {
         set {
-            _holeProcessSelector.SelectedBlankType = value;
+            _holePlanner.SelectedBlankType = value;
             RaisePropertyChanged();
             UpdateResult();
         }
-        get => _holeProcessSelector.SelectedBlankType;
+        get => _holePlanner.SelectedBlankType;
     }
 
     public string SurfaceRoughnessText {
@@ -97,7 +97,7 @@ class ProcessViewModel : BindableBase
 
             if (double.TryParse(value, out double roughness))
             {
-                _holeProcessSelector.SurfaceRoughness = roughness;
+                _holePlanner.SurfaceRoughness = roughness;
                 _surfaceRoughnessText = value;
                 RaisePropertyChanged();
                 UpdateResult();
@@ -115,7 +115,7 @@ class ProcessViewModel : BindableBase
 
             if (double.TryParse(value, out double diameter))
             {
-                _holeProcessSelector.HoleDiameter = diameter;
+                _holePlanner.HoleDiameter = diameter;
                 _holeDiameterText = value;
                 RaisePropertyChanged();
                 UpdateResult();
@@ -126,29 +126,29 @@ class ProcessViewModel : BindableBase
 
     public bool BulkProduction {
         set {
-            _holeProcessSelector.BulkProduction = value;
+            _holePlanner.BulkProduction = value;
             RaisePropertyChanged();
             UpdateResult();
         }
-        get => _holeProcessSelector.BulkProduction;
+        get => _holePlanner.BulkProduction;
     }
 
     public bool HighQualityHole {
         set {
-            _holeProcessSelector.HighQualityHole = value;
+            _holePlanner.HighQualityHole = value;
             RaisePropertyChanged();
             UpdateResult();
         }
-        get => _holeProcessSelector.HighQualityHole;
+        get => _holePlanner.HighQualityHole;
     }
 
     public bool HighQualityNonFerrousMetal {
         set {
-            _holeProcessSelector.HighQualityNonFerrousMetal = value;
+            _holePlanner.HighQualityNonFerrousMetal = value;
             RaisePropertyChanged();
             UpdateResult();
         }
-        get => _holeProcessSelector.HighQualityNonFerrousMetal;
+        get => _holePlanner.HighQualityNonFerrousMetal;
     }
 
     public ObservableCollection<ResultItem> ResultItems {
@@ -186,7 +186,7 @@ class ProcessViewModel : BindableBase
 
     private void UpdateResult()
     {
-        IEnumerable<int> results = _holeProcessSelector.GetPossibleProcess();
+        IEnumerable<int> results = _holePlanner.GetPossibleProcess();
         List<string> procedures = results.Select(Procedures.GetProcedure).ToList().Select(result => result.Aggregate((a, b) => a + " -> " + b)).ToList();
 
         ObservableCollection<ResultItem> resultItems = new();
