@@ -3,10 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:prism="http://prismlibrary.com/"
              xmlns:ext="clr-namespace:Planner.Extensions"
              mc:Ignorable="d"
-             FontFamily="Microsoft YaHei UI"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Loaded">
+                <prism:InvokeCommandAction Command="{Binding LoadedCommand}" />
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" HorizontalAlignment="Left">
+                    <StackPanel Style="{StaticResource SingleOptionEntry}">
+                        <Label Style="{StaticResource SingleOptionLabel}"
+                               Content="{x:Static ext:Texts.ProcessMethod}"/>
+                        <ComboBox ItemsSource="{Binding ProcessMethods}" 
+                                  SelectedIndex="{Binding ProcessMethod}"
+                                  Width="200">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Style="{StaticResource OptionText}" Text="{Binding Option}"></TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                </Grid>
+                <ContentControl Grid.Row="1" prism:RegionManager.RegionName="{x:Static ext:PrismManager.TongViewRegionName}" />
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock
+                Style="{StaticResource ResultHeader}"
+                Text="{x:Static ext:Texts.TongPossiblePlan}" Grid.Row="0" />
+            <ScrollViewer Grid.Row="1" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
+                <ListBox ItemsSource="{Binding ResultItems}" ItemTemplate="{StaticResource ResultListTemplate}" />
+            </ScrollViewer>
+        </Grid>
     </Grid>
 </UserControl>

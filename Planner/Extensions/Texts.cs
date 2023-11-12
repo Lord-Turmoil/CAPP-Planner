@@ -2,7 +2,9 @@
 
 static class Texts
 {
-    public const string TongPossiblePlan = "可能的加工方案：";
+    // Hole process
+
+    public const string HolePossiblePlan = "可能的加工方案：";
 
     public const string NotSelected = "未选择";
 
@@ -26,4 +28,26 @@ static class Texts
     public const string BulkProduction = "是否批量生产";
     public const string HighQualityHole = "是否具有精度要求很高的孔";
     public const string HighQualityNonFerrousMetal = "是否是要求较高的有色金属";
+
+    // Tong selection
+    public const string PleaseSelect = "请选择加工方式...";
+    public const string TongPossiblePlan = "可能的夹具方案：";
+
+    // Choices
+    public const string ProcessMethod = "加工方式";
+    public const string Method1 = "车";
+    public const string Method2 = "铣";
+    public const string Method3 = "磨";
+
+    public const string LengthDiameterRatio = "工件长径比";
+
+    public const string NumFaces = "工件面数";
+    public const string SingleFace = "单面";
+    public const string MultipleFace = "多面";
+
+    public const string IsSolid = "是否空心";
+
+    public const string ProcessSide = "加工表面";
+    public const string InnerSide = "内表面";
+    public const string OuterSide = "外表面";
 }
