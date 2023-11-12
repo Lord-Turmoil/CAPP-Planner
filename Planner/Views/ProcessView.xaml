@@ -115,14 +115,7 @@
                     <StackPanel Style="{StaticResource OptionEntry}">
                         <Label Style="{StaticResource OptionLabel}"
                                Content="{x:Static ext:Texts.HighQualityHole}" Width="NaN" />
-                        <CheckBox Content=""
-                                  IsChecked="{Binding HighQualityHole}"
-                                  HorizontalContentAlignment="Center"
-                                  VerticalContentAlignment="Center"
-                                  ScrollViewer.CanContentScroll="True">
-                            <CheckBox.LayoutTransform>
-                                <ScaleTransform ScaleX="2" ScaleY="2" />
-                            </CheckBox.LayoutTransform>
+                        <CheckBox Style="{StaticResource BigCheckBox}" Content="" IsChecked="{Binding HighQualityHole}">
                         </CheckBox>
                     </StackPanel>
                 </Grid>
@@ -130,14 +123,7 @@
                     <StackPanel Style="{StaticResource OptionEntry}">
                         <Label Style="{StaticResource OptionLabel}"
                                Content="{x:Static ext:Texts.HighQualityNonFerrousMetal}" Width="NaN" />
-                        <CheckBox Content=""
-                                  IsChecked="{Binding HighQualityNonFerrousMetal}"
-                                  HorizontalContentAlignment="Center"
-                                  VerticalContentAlignment="Center"
-                                  ScrollViewer.CanContentScroll="True">
-                            <CheckBox.LayoutTransform>
-                                <ScaleTransform ScaleX="2" ScaleY="2" />
-                            </CheckBox.LayoutTransform>
+                        <CheckBox Style="{StaticResource BigCheckBox}" Content="" IsChecked="{Binding HighQualityNonFerrousMetal}">
                         </CheckBox>
                     </StackPanel>
                 </Grid>

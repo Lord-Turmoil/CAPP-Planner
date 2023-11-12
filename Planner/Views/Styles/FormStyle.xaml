@@ -38,4 +38,14 @@
         <Setter Property="MaxLength" Value="10"></Setter>
         <Setter Property="AutomationProperties.HelpText" Value="输入数字"></Setter>
     </Style>
+
+    <Style x:Key="BigCheckBox" TargetType="CheckBox">
+        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        <Setter Property="LayoutTransform">
+            <Setter.Value>
+                <ScaleTransform ScaleX="2" ScaleY="2"></ScaleTransform>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
