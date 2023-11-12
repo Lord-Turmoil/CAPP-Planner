@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="120" />
+            <RowDefinition Height="160" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -140,7 +140,7 @@
             <TextBlock
                 Style="{StaticResource ResultHeader}"
                 Text="{x:Static ext:Texts.HolePossiblePlan}" Grid.Row="0" />
-            <ScrollViewer Grid.Row="1" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
+            <ScrollViewer  VerticalScrollBarVisibility="Auto" Grid.Row="1" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
                 <ListBox ItemsSource="{Binding ResultItems}" ItemTemplate="{StaticResource ResultListTemplate}" />
             </ScrollViewer>
         </Grid>

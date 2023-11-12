@@ -5,7 +5,48 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock Text="Index View" />
-    </Grid>
+    <ScrollViewer PreviewMouseWheel="UIElement_OnPreviewMouseWheel">
+        <StackPanel Orientation=" Vertical">
+            <Grid Style="{StaticResource Title}">
+                <TextBlock Style="{StaticResource TitleText}" Text="工艺决策程序" />
+            </Grid>
+            <StackPanel Style="{StaticResource Paragraph}" Orientation="Horizontal">
+                <TextBlock Style="{StaticResource ParagraphText}" Text="    GitHub 仓库连接：">
+
+                </TextBlock>
+                <TextBlock Style="{StaticResource ParagraphText}">
+                    <Hyperlink Click="Hyperlink_OnClick" NavigateUri="https://github.com/Lord-Turmoil/CAPP-Planner">
+                        <TextBlock Text="https://github.com/Lord-Turmoil/CAPP-Planner"></TextBlock>
+                    </Hyperlink>
+                </TextBlock>
+            </StackPanel>
+            <Grid Style="{StaticResource Section}">
+                <TextBlock Style="{StaticResource SectionText}" Text="操作说明" />
+            </Grid>
+            <Grid Style="{StaticResource Paragraph}">
+                <TextBlock Style="{StaticResource ParagraphText}"
+                       Text="    程序支持“孔加工方法链选择”以及“装夹方案选择”，点击上方菜单进入对应的工艺决策界面，选择加工条件或要求，即可得到所有可能的方案，方案结果会随选择实时更新。" />
+            </Grid>
+            <Grid Style="{StaticResource Section}">
+                <TextBlock Style="{StaticResource SectionText}" Text="开发工具" />
+            </Grid>
+            <StackPanel Style="{StaticResource Paragraph}" Orientation="Vertical">
+                <TextBlock Style="{StaticResource ParagraphText}" Text="    编程语言：C#" />
+                <TextBlock Style="{StaticResource ParagraphText}" Text="    开发框架：WPF" />
+                <TextBlock Style="{StaticResource ParagraphText}"
+                       Text="    集成开发环境：Visual Studio 2022，Blend for Visual Studio 2022" />
+            </StackPanel>
+            <Grid Style="{StaticResource Section}">
+                <TextBlock Style="{StaticResource SectionText}" Text="运行环境" />
+            </Grid>
+            <StackPanel Style="{StaticResource Paragraph}" Orientation="Vertical">
+                <TextBlock Style="{StaticResource ParagraphText}" Text="    操作系统：Windows" />
+                <TextBlock Style="{StaticResource ParagraphText}" Text="    .NET 版本：6.0 及以上" />
+                <TextBlock Style="{StaticResource ParagraphText}" Text="    内存要求：至少 64 MB" />
+                <TextBlock Style="{StaticResource ParagraphText}" Text="    存储要求：至少 2 MB" />
+            </StackPanel>
+            <Grid Style="{StaticResource Paragraph}" HorizontalAlignment="Center">
+                <TextBlock Style="{StaticResource ParagraphText}" Text="Copyright © Tony's Studio 2023" /></Grid>
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

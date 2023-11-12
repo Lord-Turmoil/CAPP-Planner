@@ -25,7 +25,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0" HorizontalAlignment="Left">
+                <Grid Grid.Row="0" HorizontalAlignment="Left" Margin="0,5,0,5">
                     <StackPanel Style="{StaticResource SingleOptionEntry}">
                         <Label Style="{StaticResource SingleOptionLabel}"
                                Content="{x:Static ext:Texts.ProcessMethod}"/>
@@ -52,7 +52,7 @@
             <TextBlock
                 Style="{StaticResource ResultHeader}"
                 Text="{x:Static ext:Texts.TongPossiblePlan}" Grid.Row="0" />
-            <ScrollViewer Grid.Row="1" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
+            <ScrollViewer  VerticalScrollBarVisibility="Auto" Grid.Row="1" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
                 <ListBox ItemsSource="{Binding ResultItems}" ItemTemplate="{StaticResource ResultListTemplate}" />
             </ScrollViewer>
         </Grid>
