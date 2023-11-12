@@ -9,6 +9,7 @@
                 <ResourceDictionary Source="Views/Styles/MenuTabStyle.xaml" />
                 <ResourceDictionary Source="Views/Styles/ResultStyle.xaml" />
                 <ResourceDictionary Source="Views/Styles/FormStyle.xaml" />
+                <ResourceDictionary Source="Views/Styles/IndexStyle.xaml"></ResourceDictionary>
 
                 <ResourceDictionary Source="Views/Templates/MenuTabTemplate.xaml" />
                 <ResourceDictionary Source="Views/Templates/ResultListTemplate.xaml" />
