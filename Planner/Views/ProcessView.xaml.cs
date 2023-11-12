@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace Planner.Views;
 
@@ -12,9 +14,14 @@ public partial class ProcessView : UserControl
         InitializeComponent();
     }
 
-    private void ScrollViewer_PreviewMouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
+    private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
     {
-        ScrollViewer scv = (ScrollViewer)sender;
+        if (e == null)
+        {
+            throw new ArgumentNullException(nameof(e));
+        }
+
+        var scv = (ScrollViewer)sender;
         scv.ScrollToVerticalOffset(scv.VerticalOffset - e.Delta);
         e.Handled = true;
     }

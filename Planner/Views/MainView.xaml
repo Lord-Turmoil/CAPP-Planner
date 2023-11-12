@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="Planner" Height="640" Width="960"
-        MinWidth="720" MinHeight="480">
+        MinWidth="860" MinHeight="480">
     <Grid>
         <i:Interaction.Triggers>
             <i:EventTrigger EventName="Loaded">

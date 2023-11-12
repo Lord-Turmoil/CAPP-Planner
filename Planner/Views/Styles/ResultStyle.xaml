@@ -7,14 +7,14 @@
     </Style>
 
     <Style x:Key="ResultIndex" TargetType="TextBlock" BasedOn="{StaticResource BaseText}">
-        <Setter Property="Width" Value="40"></Setter>
-        <Setter Property="HorizontalAlignment" Value="Right"></Setter>
-        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Width" Value="40" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Center" />
     </Style>
 
     <Style x:Key="ResultText" TargetType="TextBlock" BasedOn="{StaticResource BaseText}">
-        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
-        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
     </Style>
 
 </ResourceDictionary>

@@ -38,26 +38,17 @@ class ProcessViewModel : BindableBase
     }
 
     public ObservableCollection<OptionItem> EcoItems {
-        set {
-            _ecoItems = value;
-            RaisePropertyChanged();
-        }
+        set => SetProperty(ref _ecoItems, value);
         get => _ecoItems;
     }
 
     public ObservableCollection<OptionItem> MaterialItems {
-        set {
-            _materialItems = value;
-            RaisePropertyChanged();
-        }
+        set => SetProperty(ref _materialItems, value);
         get => _materialItems;
     }
 
     public ObservableCollection<OptionItem> BlankTypeItems {
-        set {
-            _blankTypeItems = value;
-            RaisePropertyChanged();
-        }
+        set => SetProperty(ref _blankTypeItems, value);
         get => _blankTypeItems;
     }
 
@@ -97,9 +88,8 @@ class ProcessViewModel : BindableBase
 
             if (double.TryParse(value, out double roughness))
             {
+                SetProperty(ref _surfaceRoughnessText, value);
                 _holePlanner.SurfaceRoughness = roughness;
-                _surfaceRoughnessText = value;
-                RaisePropertyChanged();
                 UpdateResult();
             }
         }
@@ -115,9 +105,8 @@ class ProcessViewModel : BindableBase
 
             if (double.TryParse(value, out double diameter))
             {
+                SetProperty(ref _holeDiameterText, value);
                 _holePlanner.HoleDiameter = diameter;
-                _holeDiameterText = value;
-                RaisePropertyChanged();
                 UpdateResult();
             }
         }

@@ -13,7 +13,6 @@ class MainViewModel : BindableBase
     private readonly IContainerProvider _containerProvider;
     private readonly IRegionManager _regionManager;
     private ObservableCollection<MenuTab> _menuTabs;
-    private IRegionNavigationJournal? _navigationJournal;
 
     public MainViewModel(IContainerProvider containerProvider, IRegionManager regionManager)
     {
@@ -53,9 +52,7 @@ class MainViewModel : BindableBase
 
         if (_regionManager.Regions.ContainsRegionWithName(PrismManager.MainViewRegionName))
         {
-            _regionManager.Regions[PrismManager.MainViewRegionName]
-                .RequestNavigate(tab.NameSpace,
-                    back => { _navigationJournal = back.Context.NavigationService.Journal; });
+            _regionManager.Regions[PrismManager.MainViewRegionName].RequestNavigate(tab.NameSpace);
         }
     }
 }
